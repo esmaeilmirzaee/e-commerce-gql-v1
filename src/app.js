@@ -15,11 +15,13 @@ const typeDefs = gql`
         id: Int
         name: String
         image: String
+        category: Category
     }
 
     type Category {
         id: ID!
         name: String!
+        products: [Product!]!
     }
 `;
 
@@ -41,9 +43,19 @@ const resolvers = {
             return categories.find((c) => c.id === args.id);
         },
     },
+    Category: {
+        products: (parent, args, context) => {
+            return products.filter((p) => p.category == parent.id);
+        },
+    },
+    Product: {
+        category: (parent, args, context) => {
+            return categories.find((c) => c.id == parent.id);
+        },
+    },
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then((url) => {
-    console.log(url);
+    console.log(`App is listening on 4000`);
 });

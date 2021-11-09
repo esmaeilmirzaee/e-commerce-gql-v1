@@ -1,13 +1,35 @@
 module.exports = [
-    { id: 1, name: 'lorem', image: '/path/to/img/1', category: 1, reviewId: 1 },
-    { id: 2, name: 'ipsum', image: '/path/to/img/2', category: 2, reviewId: 1 },
-    { id: 3, name: 'duo', image: '/path/to/img/3', category: 3, reviewId: 1 },
+    {
+        id: 1,
+        name: 'lorem',
+        image: '/path/to/img/1',
+        category: 1,
+        reviewId: 1,
+        onSale: false,
+    },
+    {
+        id: 2,
+        name: 'ipsum',
+        image: '/path/to/img/2',
+        category: 2,
+        reviewId: 1,
+        onSale: false,
+    },
+    {
+        id: 3,
+        name: 'duo',
+        image: '/path/to/img/3',
+        category: 3,
+        reviewId: 1,
+        onSale: true,
+    },
     {
         id: 4,
         name: 'ipsum duo qui',
         image: '/path/to/img/4',
         category: 4,
         reviewId: 1,
+        onSale: false,
     },
     {
         id: 5,
@@ -15,6 +37,7 @@ module.exports = [
         image: '/path/to/img/5',
         category: 4,
         reviewId: 1,
+        onSale: true,
     },
     {
         id: 6,
@@ -22,6 +45,7 @@ module.exports = [
         image: '/path/to/img/6',
         category: 4,
         reviewId: 1,
+        onSale: true,
     },
     {
         id: 7,
@@ -29,5 +53,6 @@ module.exports = [
         image: '/path/to/img/7',
         category: 4,
         reviewId: 1,
+        onSale: true,
     },
 ];

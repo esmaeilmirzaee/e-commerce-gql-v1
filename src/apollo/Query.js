@@ -1,14 +1,18 @@
 exports.Query = {
-    getProduct: (parent, { id }, { products }) => {
+    product: (parent, { id }, { products }) => {
         return products.find((product) => product.id == id);
     },
-    getProducts: (parent, args, { products }) => {
-        return products;
+    products: (parent, { filter }, { products }) => {
+        let response = filter
+            ? products.filter((product) => product.onSale)
+            : products;
+        console.log(response);
+        return response;
     },
-    getCategory: (parent, { id }, { categories }) => {
+    category: (parent, { id }, { categories }) => {
         return categories.find((category) => category.id == id);
     },
-    getCategories: (parent, args, { categories }) => {
+    categories: (parent, args, { categories }) => {
         return categories;
     },
 };

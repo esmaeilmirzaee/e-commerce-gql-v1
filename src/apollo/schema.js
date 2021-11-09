@@ -20,5 +20,13 @@ exports.typeDefs = gql`
         price: Int!
         onSale: Boolean!
         category: Category
+        reviews: [Review!]!
+    }
+
+    type Review {
+        id: ID!
+        username: String!
+        rating: Float!
+        comment: String!
     }
 `;

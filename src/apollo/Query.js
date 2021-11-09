@@ -1,14 +1,14 @@
 exports.Query = {
-    getProduct: (_, { id }, { products }) => {
+    getProduct: (parent, { id }, { products }) => {
         return products.find((product) => product.id == id);
     },
-    getProducts: (_, _, { products }) => {
+    getProducts: (parent, args, { products }) => {
         return products;
     },
-    getCategory: (_, { id }, { categories }) => {
+    getCategory: (parent, { id }, { categories }) => {
         return categories.find((category) => category.id == id);
     },
-    getCategories: (_, _, { categories }) => {
+    getCategories: (parent, args, { categories }) => {
         return categories;
     },
 };

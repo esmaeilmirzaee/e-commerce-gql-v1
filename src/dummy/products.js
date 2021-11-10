@@ -12,7 +12,7 @@ module.exports = [
         name: 'ipsum',
         image: '/path/to/img/2',
         category: 2,
-        reviewId: 1,
+        reviewId: 2,
         onSale: false,
     },
     {
@@ -28,7 +28,7 @@ module.exports = [
         name: 'ipsum duo qui',
         image: '/path/to/img/4',
         category: 4,
-        reviewId: 1,
+        reviewId: 2,
         onSale: false,
     },
     {
@@ -36,7 +36,7 @@ module.exports = [
         name: 'ipsumduoqui',
         image: '/path/to/img/5',
         category: 4,
-        reviewId: 1,
+        reviewId: 3,
         onSale: true,
     },
     {

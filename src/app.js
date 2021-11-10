@@ -3,11 +3,11 @@ const products = require('./dummy/products');
 const categories = require('./dummy/categories');
 const reviews = require('./dummy/reviews');
 const { typeDefs } = require('./apollo/schema');
-const { Query, Category, Product } = require('./apollo');
+const { Query, Category, Product, Mutation } = require('./apollo');
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers: { Query, Product, Category },
+    resolvers: { Query, Product, Category, Mutation },
     context: { products, categories, reviews },
 });
 

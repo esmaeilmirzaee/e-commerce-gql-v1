@@ -1,5 +1,7 @@
 exports.Category = {
     products: ({ id }, args, { products }) => {
-        return products.filter((product) => product.category == id);
+        return products.filter((product) => {
+            return product.categoryId == id;
+        });
     },
 };

@@ -3,7 +3,7 @@ exports.Query = {
         return products.find((product) => product.id == id);
     },
     products: (parent, { filter }, { products, reviews }) => {
-        switch (Object.keys(filter)[0]) {
+        switch (filter && Object.keys(filter)[0]) {
             case 'avgRating':
                 return products.filter((p) => {
                     let perReview = reviews.filter((r) => r.productId == p.id);

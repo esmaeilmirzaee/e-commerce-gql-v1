@@ -40,4 +40,16 @@ exports.Mutation = {
         db.reviews = db.reviews.filter((review) => review.id !== id);
         return true;
     },
+    updateProduct: (parent, { id, input }, { db }) => {
+        const index = db.products.findIndex((product) => product.id == id);
+
+        if (index === -1) return;
+
+        db.products[index] = {
+            ...db.products[index],
+            ...input,
+        };
+
+        return db.products[index];
+    },
 };

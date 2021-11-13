@@ -1,12 +1,14 @@
 exports.Query = {
-    product: (parent, { id }, { products }) => {
-        return products.find((product) => product.id == id);
+    product: (parent, { id }, { db }) => {
+        return db.products.find((product) => product.id == id);
     },
-    products: (parent, { filter }, { products, reviews }) => {
+    products: (parent, { filter }, { db, products }) => {
         switch (filter && Object.keys(filter)[0]) {
             case 'avgRating':
-                return products.filter((p) => {
-                    let perReview = reviews.filter((r) => r.productId == p.id);
+                return db.products.filter((p) => {
+                    let perReview = db.reviews.filter(
+                        (r) => r.productId == p.id,
+                    );
                     let reviewsRating = perReview.reduce(
                         ({ count, acc }, review) => ({
                             count: count + 1,
@@ -28,17 +30,17 @@ exports.Query = {
                 });
 
             case 'onSale':
-                return products.filter((p) => p.onSale);
+                return db.products.filter((p) => p.onSale);
             case 'avgRating' && 'onSale':
                 break;
             default:
-                return products;
+                return db.products;
         }
     },
-    category: (parent, { id }, { categories }) => {
-        return categories.find((category) => category.id == id);
+    category: (parent, { id }, { db }) => {
+        return db.categories.find((category) => category.id == id);
     },
-    categories: (parent, args, { categories }) => {
-        return categories;
+    categories: (parent, args, { db }) => {
+        return db.categories;
     },
 };

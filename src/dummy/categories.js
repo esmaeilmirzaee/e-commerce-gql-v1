@@ -1,4 +1,4 @@
-module.exports = [
+exports.categories = [
     { id: '1', name: 'Pets' },
     { id: '2', name: 'House' },
     { id: '3', name: 'Kitchen' },

@@ -12,6 +12,9 @@ exports.typeDefs = gql`
     type Mutation {
         addCategory(input: InputCategoryMutation!): Category!
         addProduct(input: InputProductMutation!): Product!
+        deleteCategory(id: ID!): Boolean!
+        deleteProduct(id: ID!): Boolean!
+        deleteReview(id: ID!): Boolean!
     }
 
     type Category {

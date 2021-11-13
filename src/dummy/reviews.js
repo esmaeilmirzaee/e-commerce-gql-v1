@@ -1,4 +1,4 @@
-module.exports = [
+exports.reviews = [
     {
         id: 1,
         username: 'john',

@@ -1,4 +1,4 @@
-module.exports = [
+exports.products = [
     {
         id: 1,
         name: 'lorem',
